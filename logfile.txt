@@ -1,5 +1,5 @@
-[Verificator][Verificator, line: 160] No errors finded!
-[DUMP][file: ./stack_main.cpp, func: StackDump, line: 205]
+[Verificator][Verificator, line: 189] No errors found!
+[DUMP][file: ./stack_main.cpp, func: StackDump, line: 235]
 stk->size: 0,
 stk->capacity: 8.
 	stk->data[0] = POISON
@@ -10,26 +10,26 @@ stk->capacity: 8.
 	stk->data[5] = POISON
 	stk->data[6] = POISON
 	stk->data[7] = POISON
-[Verificator][Verificator, line: 160] No errors finded!
-[StackPush, line: 260] Pushed 0.000000 succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
-[StackPush, line: 260] Pushed 1.000000 succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
-[StackPush, line: 260] Pushed 2.000000 succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
-[StackPush, line: 260] Pushed 3.000000 succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
-[StackPush, line: 260] Pushed 4.000000 succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
-[StackPush, line: 260] Pushed 5.000000 succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
-[StackPush, line: 260] Pushed 6.000000 succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
-[StackResize, line: 90] Resizing up from 8 to 16 capacity
-[StackPush, line: 253] Resized succesfully!
-[StackPush, line: 260] Pushed 7.000000 succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
-[DUMP][file: ./stack_main.cpp, func: StackDump, line: 205]
+[Verificator][Verificator, line: 189] No errors found!
+[StackPush, line: 297] Pushed 0.000000 succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[StackPush, line: 297] Pushed 1.000000 succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[StackPush, line: 297] Pushed 2.000000 succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[StackPush, line: 297] Pushed 3.000000 succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[StackPush, line: 297] Pushed 4.000000 succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[StackPush, line: 297] Pushed 5.000000 succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[StackPush, line: 297] Pushed 6.000000 succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[StackResize, line: 128] Resizing up from 8 to 8 capacity
+[StackPush, line: 290] Resized succesfully!
+[StackPush, line: 297] Pushed 7.000000 succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[DUMP][file: ./stack_main.cpp, func: StackDump, line: 235]
 stk->size: 8,
 stk->capacity: 16.
 	stk->data[0] = 0.000000
@@ -48,26 +48,27 @@ stk->capacity: 16.
 	stk->data[13] = POISON
 	stk->data[14] = POISON
 	stk->data[15] = POISON
-[Verificator][Verificator, line: 160] No errors finded!
+[Verificator][Verificator, line: 189] No errors found!
 Popping 7.000000
-[StackPop, line:184] Popped succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
+[StackPop, line:213] Popped succesfully!
+[Verificator][Verificator, line: 189] No errors found!
 Popping 6.000000
-[StackPop, line:184] Popped succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
+[StackPop, line:213] Popped succesfully!
+[Verificator][Verificator, line: 189] No errors found!
 Popping 5.000000
-[StackPop, line:184] Popped succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
+[StackPop, line:213] Popped succesfully!
+[Verificator][Verificator, line: 189] No errors found!
 Popping 4.000000
-[StackPop, line:184] Popped succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
+[StackPop, line:213] Popped succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[StackResize, line: 128] Resizing up from 16 to 8 capacity
 Popping 3.000000
-[StackPop, line:184] Popped succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
+[StackPop, line:213] Popped succesfully!
+[Verificator][Verificator, line: 189] No errors found!
 Popping 2.000000
-[StackPop, line:184] Popped succesfully!
-[Verificator][Verificator, line: 160] No errors finded!
-[DUMP][file: ./stack_main.cpp, func: StackDump, line: 205]
+[StackPop, line:213] Popped succesfully!
+[Verificator][Verificator, line: 189] No errors found!
+[DUMP][file: ./stack_main.cpp, func: StackDump, line: 235]
 stk->size: 2,
 stk->capacity: 16.
 	stk->data[0] = 0.000000
