@@ -1,0 +1,158 @@
+[Verificator][Verificator, line: 115] No errors finded!
+[DUMP][file: ./stack_main.cpp, func: StackDump, line: 161]
+stk->size: 0,
+stk->capacity: 8.
+	stk->data[0] = POISON
+	stk->data[1] = POISON
+	stk->data[2] = POISON
+	stk->data[3] = POISON
+	stk->data[4] = POISON
+	stk->data[5] = POISON
+	stk->data[6] = POISON
+	stk->data[7] = POISON
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 0 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 1 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 2 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 3 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 4 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 5 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 6 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackResize, line: 50] Resizing up from 8 to 16 capacity
+[StackPush, line: 207] Resized succesfully!
+[StackPush, line: 214] Pushed 7 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 8 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 9 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 10 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 11 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 12 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackResize, line: 50] Resizing up from 16 to 32 capacity
+[StackPush, line: 207] Resized succesfully!
+[StackPush, line: 214] Pushed 13 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 14 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 15 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 16 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 17 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 18 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackPush, line: 214] Pushed 19 succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[DUMP][file: ./stack_main.cpp, func: StackDump, line: 161]
+stk->size: 20,
+stk->capacity: 32.
+	stk->data[0] = 0
+	stk->data[1] = 1
+	stk->data[2] = 2
+	stk->data[3] = 3
+	stk->data[4] = 4
+	stk->data[5] = 5
+	stk->data[6] = 6
+	stk->data[7] = 7
+	stk->data[8] = 8
+	stk->data[9] = 9
+	stk->data[10] = 10
+	stk->data[11] = 11
+	stk->data[12] = 12
+	stk->data[13] = 13
+	stk->data[14] = 14
+	stk->data[15] = 15
+	stk->data[16] = 16
+	stk->data[17] = 17
+	stk->data[18] = 18
+	stk->data[19] = 19
+	stk->data[20] = POISON
+	stk->data[21] = POISON
+	stk->data[22] = POISON
+	stk->data[23] = POISON
+	stk->data[24] = POISON
+	stk->data[25] = POISON
+	stk->data[26] = POISON
+	stk->data[27] = POISON
+	stk->data[28] = POISON
+	stk->data[29] = POISON
+	stk->data[30] = POISON
+	stk->data[31] = POISON
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 19
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 18
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 17
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 16
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 15
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 14
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 13
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 12
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 11
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 10
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 9
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[StackResize, line: 73] Resized down from 16 to 8 capacity.
+Popping 8
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 7
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 6
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+Popping 5
+[StackPop, line:139] Popped succesfully!
+[Verificator][Verificator, line: 115] No errors finded!
+[DUMP][file: ./stack_main.cpp, func: StackDump, line: 161]
+stk->size: 5,
+stk->capacity: 16.
+	stk->data[0] = 0
+	stk->data[1] = 1
+	stk->data[2] = 2
+	stk->data[3] = 3
+	stk->data[4] = 4
+	stk->data[5] = POISON
+	stk->data[6] = POISON
+	stk->data[7] = POISON
+	stk->data[8] = POISON
+	stk->data[9] = POISON
+	stk->data[10] = POISON
+	stk->data[11] = POISON
+	stk->data[12] = POISON
+	stk->data[13] = POISON
+	stk->data[14] = POISON
+	stk->data[15] = POISON
