@@ -1,14 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+
 
 #define POISON -43125
+#define EPS 1e-3
 #define STK_NULLPTR 0b00000001
 #define ZERO_CAP 0b00000010
 #define DATA_NULLPTR 0b00000100
 #define ZERO_SIZE 0b00001000
 #define WRONG_POISON 0b00010000
 #define CAP_LESS_SIZE 0b01000000
+#define HASH_ERROR 0b10000000
+#define FIRST_CANARIE 0xDEAD2BAD
+#define SECOND_CANARIE 0xDEFEC8ED
 
 #define DEBUG_ECHO(); fprintf(stdout, "[%s, line: %d]\n", __func__, __LINE__);
 
@@ -20,14 +26,48 @@
 // Не нашёл пока способа сделать лучше :(
 
 
-typedef int Elem_t;
+typedef double Elem_t;
+typedef unsigned long Canarie_t;
 char errors = (char)0;         // Чем лучше инициализировать?
 
 struct Stack{
     size_t capacity = 0;
     size_t size = 0;
     Elem_t *data = nullptr;
+    unsigned long hash = 0;
 };
+
+unsigned long djb2hash(void *data_){
+#ifndef NOHASH
+    unsigned char *data = (unsigned char*)data_;
+    unsigned long c, hash = 5381;
+
+    while((c = *data++)){
+        hash = ((hash << 5) * hash) + c;
+    }
+
+    return hash;
+#else
+    return 0;
+#endif
+}
+
+#ifdef NOHASH
+unsigned long dublicated_hash(void* data_){
+    unsigned char *data = (unsigned char*)data_;
+    unsigned long c, hash = 5381;
+
+    while((c = *data++)){
+        hash = ((hash << 5) * hash) + c;
+    }
+
+    return hash;
+}
+#endif
+
+bool IsEqual(Elem_t a, Elem_t b){
+    return fabs(a - b) < EPS;
+}
 
 int StackResize(Stack *stk, FILE* logfile, int Direction){
     DEBUG_ECHO();
@@ -73,6 +113,7 @@ int StackResize(Stack *stk, FILE* logfile, int Direction){
                 __LINE__, stk->capacity, stk->capacity / 2);
         }
     }
+    stk->hash = djb2hash(stk);
     return 0;
 }
 
@@ -89,24 +130,28 @@ bool NeedToResize(Stack *stk, int direction){
 
 char Verificator(Stack *stk, FILE* logfile){      // Сделать это define`ом
     DEBUG_ECHO();
+    unsigned long prev_hash = stk->hash, new_hash;
 
     // Какие ещё могут быть ошибки? –Канарейки и несовпадение хэша
     // А что потом с ошибками делать-то? Ну, собрали ошибки в переменную ошибок, и?..
 
     // Предполагается что stk->size и stk->capacity не должны быть равны нулю.
 
-    // Имеют ли смысл ошибки stk->capacity == nullptr / stk->size == nullptr при stk != nullptr?
-
     VERIFICATION(stk == nullptr, "stk is nullptr!\n", STK_NULLPTR);
     VERIFICATION(stk->capacity < stk->size, "stk->capacity is less than stk->size!\n", CAP_LESS_SIZE);
     VERIFICATION(stk->capacity == 0, "stk->capacity is 0!\n", ZERO_CAP);
-    VERIFICATION(stk->size == 0 && stk->data[0] != POISON, "stk->size is 0!\n", ZERO_SIZE);
+    VERIFICATION(stk->size == 0 && !IsEqual(stk->data[0], POISON), "stk->size is 0!\n", ZERO_SIZE);
     VERIFICATION(stk->data == nullptr, "stk->data is nullptr!\n", DATA_NULLPTR);
+
+    stk->hash = 0;
+    new_hash = djb2hash((unsigned long*)stk);
+    VERIFICATION(new_hash != prev_hash, "Hash error.\n", (char)HASH_ERROR);
+    stk->hash = new_hash;
 
     // stk->capacity и stk->size не могут быть < 0 в силу определения типом size_t
 
     for(size_t i = stk->size; i < stk->capacity; i++){
-        if(stk->data[i] != POISON){
+        if(!IsEqual(stk->data[i],POISON)){
             fprintf(logfile, "[Verificator][%s, line: %d] stk->data[%zu] is not POISON!\n", __func__, __LINE__, i);
             errors = errors | WRONG_POISON;
         }
@@ -127,7 +172,7 @@ int StackPop(Stack *stk, FILE *logfile){
             StackResize(stk, logfile, 0);
         }
 
-        fprintf(logfile, "Popping %d\n", stk->data[stk->size - 1]);
+        fprintf(logfile, "Popping %f\n", stk->data[stk->size - 1]);
         stk->data[stk->size - 1] = POISON;
         stk->size--;
     }
@@ -165,10 +210,10 @@ int StackDump(Stack *stk, FILE *logfile){
     }
 
     for(size_t i = 0; i < stk->capacity; i++){
-        if(stk->data[i] == POISON){
+        if(IsEqual(stk->data[i],POISON)){
             fprintf(logfile, "\tstk->data[%zu] = POISON\n", i);
         }
-        else fprintf(logfile, "\tstk->data[%zu] = %d\n", i, stk->data[i]);
+        else fprintf(logfile, "\tstk->data[%zu] = %f\n", i, stk->data[i]);
     }
 
     return 0;
@@ -193,6 +238,8 @@ int StackCtor(Stack *stk, size_t capacity, FILE* logfile){
         stk->data[i] = POISON;
     }
 
+    stk->hash = djb2hash((unsigned long*)stk);
+
     return 0;
 }
 
@@ -210,7 +257,7 @@ int StackPush(Stack *stk, FILE *logfile, Elem_t value){
         stk->size++;
     }
 
-    fprintf(logfile, "[%s, line: %d] Pushed %d succesfully!\n", __func__, __LINE__, value);
+    fprintf(logfile, "[%s, line: %d] Pushed %f succesfully!\n", __func__, __LINE__, value);
 
     return 0;
 }
@@ -219,35 +266,31 @@ int main(){
     Stack stk = {};
     size_t capacity = 8;              //TBD
     FILE* logfile = fopen("logfile.txt", "w");      // Может, сделать переменную logfile глобальной ?
-    int func_return = NULL;
 
     //User input for capacity ?
-    func_return = StackCtor(&stk, capacity, logfile);        // Как лучше обрабатывать возвращаемые значения ?..
 
-    if(func_return == -1){
-        fprintf(logfile, "[Error][%s, line: %d] Failed to create stack! Stk pointer is nullptr!\n", __func__, __LINE__);
-        return -1;
-    }
-    if(func_return == - 2){
-        fprintf(logfile, "[Error][%s, line: %d] Failed to create stack! Allocation error.\n", __func__, __LINE__);
-        return -1;
-    }
+    StackCtor(&stk, capacity, logfile);        // Как лучше обрабатывать возвращаемые значения ?..
+
+    printf("[HASH] %zu\n", stk.hash);
 
     StackDump(&stk, logfile);
 
-    for(int i = 0; i < 20; i++){
+    for(int i = 0; i < 8; i++){
         StackPush(&stk, logfile, i);
     }
 
     StackDump(&stk, logfile);
 
-    for(int i = 0; i < 15; i++){
+    for(int i = 0; i < 6; i++){
         StackPop(&stk, logfile);
     }
 
     StackDump(&stk, logfile);
 
-    StackDtor(&stk, logfile);
+    printf("Hash: %lu\n", stk.hash);
+
     fclose(logfile);
+    StackDtor(&stk, logfile);
+
     return 0;
 }
