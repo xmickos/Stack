@@ -4,6 +4,7 @@
 #include <math.h>
 
 #define POISON 0xC0DEDEAD
+#define BASIC_POISON 0xC67178F2
 #define EPS 1e-3
 #define DEBUG
 
@@ -21,18 +22,25 @@ enum STACK_ERRORS {
     HASH_ERROR   = SINGLE_BIT(6),
     LOGFILE_NULL = SINGLE_BIT(7),
     RESIZE_YES   = SINGLE_BIT(8),
+    FIRST_CAN_BAD= SINGLE_BIT(9),
+  SECOND_CAN_BAD = SINGLE_BIT(10)
 }; // TODO: enum
 
 //uint32_t
 
-#define FIRST_CANARIE  0xDEAD2BAD
-#define SECOND_CANARIE 0xDEFEC8ED
+#define FIRST_CANARY  0xDEAD2BAD
+#define SECOND_CANARY 0xDEFEC8ED
 
 #ifdef DEBUG
 #define DEBUG_ECHO(stream, message) do { fprintf(stream, "[%s, line: %d]" message "\n", __func__, __LINE__); } while(0)
 #else
 #define DEBUG_ECHO(stream, message) do { ; } while(0)
 #endif
+
+#define ELEM_PRINT(symbol)         if(IsEqual(stk->data[i - 1], symbol)){                                               \
+            fprintf(logfile, "\tstk->data[%zu] = " #symbol "\n", i - 1);                                                \
+            continue;                                                                                                   \
+        }                                                                                                               \
 
 
 // сделать такой же define на случаи "pushed succesfully", который бы раскрывался в пустоту в случае не дебага.
@@ -43,19 +51,19 @@ enum STACK_ERRORS {
     }                                                                                                                   \
 
 #define VERIFICATION_CRITICAL(condition, message, error_code)     if(condition){                                        \
-        fprintf(stdout, "[Verificator][%s, line: %d] " message , __func__, __LINE__);                                   \
+        fprintf(stdout, "[FATAL ERROR][%s, line: %d] " message , __func__, __LINE__);                                   \
         exit(-1);                                                                                                       \
     }                                                                                                                   \
         // stk->errors = stk->errors | error_code;
 
 #define STK_NULL_VERIFICATION(stk, logfile)     if(stk == nullptr){                                                     \
-        fprintf(logfile, "[Error][%s, line: %d] stk pointer is nullptr!\n", __func__, __LINE__);                        \
+        fprintf(logfile, "[FATAL ERROR][%s, line: %d] stk pointer is nullptr!\n", __func__, __LINE__);                  \
         exit(-1);                                                                                                       \
     }                                                                                                                   \
 
 
 typedef double Elem_t;
-typedef unsigned long Canarie_t;
+typedef unsigned long  Canary_t;
 
 struct Stack{
     size_t capacity = 0;
@@ -71,7 +79,7 @@ uint32_t Verificator(Stack *stk, FILE* logfile);
 #define GENERAL_VERIFICATION(stk, logfile)     uint32_t verificator_output = Verificator(stk, logfile);                 \
     DEBUG_ECHO(stdout, "");                                                                                             \
     if(verificator_output != 0){                                                                                        \
-        DEBUG_ECHO(logfile, "Verification error.\n");                                                                   \
+        DEBUG_ECHO(logfile, " Verification error. Function failed.\n");                                                  \
         return verificator_output;                                                                                      \
     }                                                                                                                   \
 

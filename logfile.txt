@@ -1,113 +1,493 @@
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[StackPush, line: 196] Pushed 0.000000 successfully!
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[StackPush, line: 196] Pushed 1.000000 successfully!
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[StackPush, line: 196] Pushed 2.000000 successfully!
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[StackPush, line: 196] Pushed 3.000000 successfully!
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[StackPush, line: 196] Pushed 4.000000 successfully!
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[StackPush, line: 196] Pushed 5.000000 successfully!
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[StackPush, line: 196] Pushed 6.000000 successfully!
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[StackResize, line: 45] Resizing from 8 to 16 capacity
-[StackPush, line: 190]Resized successfully!
-
-[StackPush, line: 196] Pushed 7.000000 successfully!
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-Popping 7.000000
-[StackPop, line: 122]Popped succesfully!
-
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-Popping 6.000000
-[StackPop, line: 122]Popped succesfully!
-
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-Popping 5.000000
-[StackPop, line: 122]Popped succesfully!
-
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-Popping 4.000000
-[StackPop, line: 122]Popped succesfully!
-
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[StackResize, line: 45] Resizing from 16 to 16 capacity
-Popping 3.000000
-[StackPop, line: 122]Popped succesfully!
-
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-Popping 2.000000
-[StackPop, line: 122]Popped succesfully!
-
-[Verificator, line: 102]No errors found!
-
-[Verificator, line: 102]No errors found!
-
-[DUMP][file: ./stack_funcs.cpp, func: StackDump, line: 134]
-stk->size: 2,
-stk->capacity: 16.
-	stk->data[0] = 0.000000
-	stk->data[1] = 1.000000
+[DUMP][file: stack_funcs.cpp, func: StackDump, line: 142]
+stk->size: 0,
+stk->capacity: 8.
+	stk->data[18446744073709551615] = FIRST_CANARY
+	stk->data[0] = POISON
+	stk->data[1] = POISON
 	stk->data[2] = POISON
 	stk->data[3] = POISON
 	stk->data[4] = POISON
 	stk->data[5] = POISON
 	stk->data[6] = POISON
 	stk->data[7] = POISON
-	stk->data[8] = POISON
-	stk->data[9] = POISON
-	stk->data[10] = POISON
-	stk->data[11] = POISON
-	stk->data[12] = POISON
-	stk->data[13] = POISON
-	stk->data[14] = POISON
-	stk->data[15] = POISON
+	stk->data[8] = SECOND_CANARY
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 0.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 1.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 2.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 3.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 4.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 5.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 6.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackResize, line: 45] Resizing from 8 to 16 capacity
+[StackPush, line: 205]Resized successfully!
+
+[StackPush, line: 211] Pushed 7.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 8.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 9.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 10.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 11.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 12.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackResize, line: 45] Resizing from 16 to 32 capacity
+[StackPush, line: 205]Resized successfully!
+
+[StackPush, line: 211] Pushed 13.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 14.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 15.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 16.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 17.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 18.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 19.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 20.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 21.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 22.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 23.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 24.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 25.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackResize, line: 45] Resizing from 32 to 64 capacity
+[StackPush, line: 205]Resized successfully!
+
+[StackPush, line: 211] Pushed 26.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 27.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 28.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 29.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 30.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 31.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 32.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 33.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 34.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 35.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 36.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 37.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 38.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 39.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 40.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 41.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 42.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 43.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 44.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 45.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 46.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 47.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 48.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 49.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 50.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 51.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackResize, line: 45] Resizing from 64 to 128 capacity
+[StackPush, line: 205]Resized successfully!
+
+[StackPush, line: 211] Pushed 52.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 53.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 54.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 55.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 56.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 57.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 58.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 59.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 60.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 61.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 62.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 63.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[Verificator, line: 109]No errors found!
+
+[StackPush, line: 211] Pushed 3235831469.000000 successfully!
+[Verificator, line: 109]No errors found!
+
+[DUMP][file: stack_funcs.cpp, func: StackDump, line: 142]
+stk->size: 65,
+stk->capacity: 128.
+	stk->data[18446744073709551615] = FIRST_CANARY
+	stk->data[0] = 0.000000
+	stk->data[1] = 1.000000
+	stk->data[2] = 2.000000
+	stk->data[3] = 3.000000
+	stk->data[4] = 4.000000
+	stk->data[5] = 5.000000
+	stk->data[6] = 6.000000
+	stk->data[7] = 7.000000
+	stk->data[8] = 8.000000
+	stk->data[9] = 9.000000
+	stk->data[10] = 10.000000
+	stk->data[11] = 11.000000
+	stk->data[12] = 12.000000
+	stk->data[13] = 13.000000
+	stk->data[14] = 14.000000
+	stk->data[15] = 15.000000
+	stk->data[16] = 16.000000
+	stk->data[17] = 17.000000
+	stk->data[18] = 18.000000
+	stk->data[19] = 19.000000
+	stk->data[20] = 20.000000
+	stk->data[21] = 21.000000
+	stk->data[22] = 22.000000
+	stk->data[23] = 23.000000
+	stk->data[24] = 24.000000
+	stk->data[25] = 25.000000
+	stk->data[26] = 26.000000
+	stk->data[27] = 27.000000
+	stk->data[28] = 28.000000
+	stk->data[29] = 29.000000
+	stk->data[30] = 30.000000
+	stk->data[31] = 31.000000
+	stk->data[32] = 32.000000
+	stk->data[33] = 33.000000
+	stk->data[34] = 34.000000
+	stk->data[35] = 35.000000
+	stk->data[36] = 36.000000
+	stk->data[37] = 37.000000
+	stk->data[38] = 38.000000
+	stk->data[39] = 39.000000
+	stk->data[40] = 40.000000
+	stk->data[41] = 41.000000
+	stk->data[42] = 42.000000
+	stk->data[43] = 43.000000
+	stk->data[44] = 44.000000
+	stk->data[45] = 45.000000
+	stk->data[46] = 46.000000
+	stk->data[47] = 47.000000
+	stk->data[48] = 48.000000
+	stk->data[49] = 49.000000
+	stk->data[50] = 50.000000
+	stk->data[51] = 51.000000
+	stk->data[52] = 52.000000
+	stk->data[53] = 53.000000
+	stk->data[54] = 54.000000
+	stk->data[55] = 55.000000
+	stk->data[56] = 56.000000
+	stk->data[57] = 57.000000
+	stk->data[58] = 58.000000
+	stk->data[59] = 59.000000
+	stk->data[60] = 60.000000
+	stk->data[61] = 61.000000
+	stk->data[62] = 62.000000
+	stk->data[63] = 63.000000
+	stk->data[64] = POISON
+	stk->data[65] = POISON
+	stk->data[66] = POISON
+	stk->data[67] = POISON
+	stk->data[68] = POISON
+	stk->data[69] = POISON
+	stk->data[70] = POISON
+	stk->data[71] = POISON
+	stk->data[72] = POISON
+	stk->data[73] = POISON
+	stk->data[74] = POISON
+	stk->data[75] = POISON
+	stk->data[76] = POISON
+	stk->data[77] = POISON
+	stk->data[78] = POISON
+	stk->data[79] = POISON
+	stk->data[80] = POISON
+	stk->data[81] = POISON
+	stk->data[82] = POISON
+	stk->data[83] = POISON
+	stk->data[84] = POISON
+	stk->data[85] = POISON
+	stk->data[86] = POISON
+	stk->data[87] = POISON
+	stk->data[88] = POISON
+	stk->data[89] = POISON
+	stk->data[90] = POISON
+	stk->data[91] = POISON
+	stk->data[92] = POISON
+	stk->data[93] = POISON
+	stk->data[94] = POISON
+	stk->data[95] = POISON
+	stk->data[96] = POISON
+	stk->data[97] = POISON
+	stk->data[98] = POISON
+	stk->data[99] = POISON
+	stk->data[100] = POISON
+	stk->data[101] = POISON
+	stk->data[102] = POISON
+	stk->data[103] = POISON
+	stk->data[104] = POISON
+	stk->data[105] = POISON
+	stk->data[106] = POISON
+	stk->data[107] = POISON
+	stk->data[108] = POISON
+	stk->data[109] = POISON
+	stk->data[110] = POISON
+	stk->data[111] = POISON
+	stk->data[112] = POISON
+	stk->data[113] = POISON
+	stk->data[114] = POISON
+	stk->data[115] = POISON
+	stk->data[116] = POISON
+	stk->data[117] = POISON
+	stk->data[118] = POISON
+	stk->data[119] = POISON
+	stk->data[120] = POISON
+	stk->data[121] = POISON
+	stk->data[122] = POISON
+	stk->data[123] = POISON
+	stk->data[124] = POISON
+	stk->data[125] = POISON
+	stk->data[126] = POISON
+	stk->data[127] = POISON
+	stk->data[128] = SECOND_CANARY

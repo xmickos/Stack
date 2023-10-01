@@ -43,8 +43,10 @@ static uint32_t StackResize(Stack *stk, FILE* logfile, int Direction){
     }
 
     fprintf(logfile, "[%s, line: %d] Resizing from %zu to %zu capacity\n", __func__, __LINE__, stk->capacity, new_size);
-
-    stk->data = (Elem_t*)realloc(stk->data, new_size * sizeof(Elem_t));
+    printf("stk->data[-1] = %f\nstk->data[cap] = %f\n", stk->data[-1], stk->data[stk->capacity]);
+    stk->data--;
+    stk->data = (Elem_t*)realloc(stk->data, new_size * sizeof(Elem_t) + 2 * sizeof(Canary_t));
+    stk->data++;
 
     if(stk->data == nullptr){
         DEBUG_ECHO(logfile, "Failed to reallocate memory – not enought free space!\n");
@@ -55,6 +57,7 @@ static uint32_t StackResize(Stack *stk, FILE* logfile, int Direction){
     for(size_t i = stk->size; i < stk->capacity; i++){
         stk->data[i] = POISON;
     }
+    stk->data[stk->capacity] = SECOND_CANARY;
 
     stk->hash = djb2hash(stk);
     return 0;
@@ -80,10 +83,12 @@ uint32_t Verificator(Stack *stk, FILE* logfile){      // Сделать это d
     // VERIFICATION_CRITICAL(stk == nullptr, "stk is nullptr!\n", STK_NULLPTR);
     STK_NULL_VERIFICATION(stk, logfile);
     VERIFICATION_CRITICAL(logfile == nullptr, "logfile is nullptr!\n", LOGFILE_NULL);
-    VERIFICATION(stk->data == nullptr, "stk->data is nullptr!\n", DATA_NULLPTR);
     VERIFICATION(stk->capacity == 0, "stk->capacity is 0!\n", ZERO_CAP);
     VERIFICATION(stk->capacity < stk->size, "stk->capacity is less than stk->size!\n", CAP_LESS_SIZE);
     VERIFICATION(stk->size == 0 && !IsEqual(stk->data[0], POISON), "stk->size is 0!\n", ZERO_SIZE);
+    VERIFICATION(!IsEqual(stk->data[-1], FIRST_CANARY), "First canary is dead!\n", FIRST_CAN_BAD);
+    VERIFICATION(!IsEqual(stk->data[stk->capacity], SECOND_CANARY), "Second canary is dead!\n", SECOND_CAN_BAD);
+    VERIFICATION_CRITICAL(stk->data == nullptr, "stk->data is nullptr!\n", DATA_NULLPTR);
 
     unsigned long prev_hash = stk->hash, new_hash = 0;
     stk->hash = 0;
@@ -91,10 +96,12 @@ uint32_t Verificator(Stack *stk, FILE* logfile){      // Сделать это d
     VERIFICATION(new_hash != prev_hash, "Hash error.\n", HASH_ERROR);
     stk->hash = new_hash;
 
-    for(size_t i = stk->size; i < stk->capacity; i++){
-        if(!IsEqual(stk->data[i],POISON)){
-            fprintf(logfile, "[Verificator][%s, line: %d] stk->data[%zu] is not POISON!\n", __func__, __LINE__, i);
+    size_t real_size = stk->size;
+    for(; real_size < stk->capacity - 1; real_size++){
+        if(!IsEqual(stk->data[real_size],POISON)){
+            fprintf(logfile, "[Verificator][%s, line: %d] stk->data[%zu] is not POISON!\n", __func__, __LINE__, real_size);
             stk->errors = stk->errors | WRONG_POISON;
+            break;
         }
     }
 
@@ -125,7 +132,8 @@ uint32_t StackPop(Stack *stk, FILE *logfile){
 }
 
 static uint32_t StackDump(Stack *stk, FILE *logfile){
-    GENERAL_VERIFICATION(stk, logfile);
+    // GENERAL_VERIFICATION(stk, logfile);
+    DEBUG_ECHO(stdout, "");
 
     // "Мы верим в логфайл", поэтому проверки на logfile == nullptr нет
     // если logfile == nullptr то exit(-1); ладно не надо exit(-1);
@@ -134,15 +142,12 @@ static uint32_t StackDump(Stack *stk, FILE *logfile){
             __FILE__, __func__, __LINE__, stk->size, stk->capacity);
 
 
-    for(size_t i = 0; i < stk->capacity; i++){
-        if(IsEqual(stk->data[i],POISON)){
-            fprintf(logfile, "\tstk->data[%zu] = POISON\n", i);
-        }
-        else fprintf(logfile, "\tstk->data[%zu] = %f\n", i, stk->data[i]);
+    for(size_t i = 0; i < stk->capacity + 2; i++){            // !! Предполагается, что канарейка имеет размер элемента стэка.
+        ELEM_PRINT(FIRST_CANARY);
+        ELEM_PRINT(SECOND_CANARY);
+        ELEM_PRINT(POISON)
+        else fprintf(logfile, "\tstk->data[%zu] = %f\n", i - 1, stk->data[i - 1]);
     }
-
-
-
 
     return 0;
 }
@@ -151,7 +156,7 @@ uint32_t StackDtor(Stack *stk, FILE* logfile){
     GENERAL_VERIFICATION(stk, logfile);
     StackDump(stk, logfile);
 
-    free(stk->data);
+    free(stk->data - 1);
     return 0;           // Проверки на stk == nullptr посредством макроса и stk->errors бессмысленны: stk->errors при
 }                       // stk == nullptr не имеет смысла, нужно делать отдельный макрос и возвращать отдельно зарезирвированное
                         // значение.
@@ -164,21 +169,31 @@ uint32_t StackCtor(Stack *stk, size_t capacity, FILE* logfile){
     stk->capacity = capacity;
     stk->size = 0;
 
-    stk->data = (Elem_t*)calloc(capacity, sizeof(Elem_t));
+    // stk->data = (Elem_t*)calloc(capacity, sizeof(Elem_t));              // No canary
+
+
+    stk->data = (Elem_t*)calloc(capacity * sizeof(Elem_t) + 2 * sizeof(Canary_t), sizeof(char));
+    printf("allocated %lu bytes of memory\n", capacity * sizeof(Elem_t) + 2 * sizeof(Canary_t));
+    stk->data++;
+
+    /**
+     * Пока вторая канарейка хэшируется, потом это можно исправить, добавив в функцию хэша длину хэшируемого блока памяти.
+     */
 
     if(stk->data == nullptr){
         DEBUG_ECHO(logfile, "Failed to allocate memory – not enought free space!\n");
         return STK_NULLPTR;
     }
 
-    // *(stk->data - sizeof(Canarie_t)) = FIRST_CANARY;
-    // *(stk->data + stk->capacity -1 + sizeof(Canarie_t)) = SECOND_CANARY;
-
     for(size_t i = 0; i < stk->capacity; i++){
         stk->data[i] = POISON;
     }
+    stk->data[-1] = FIRST_CANARY;
+    stk->data[stk->capacity] = SECOND_CANARY;
 
     stk->hash = djb2hash((unsigned long*)stk);
+
+    StackDump(stk, logfile);
 
     return 0;
 }
