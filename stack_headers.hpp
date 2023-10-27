@@ -137,5 +137,4 @@ uint32_t StackCtor(Stack *stk, size_t capacity, FILE* logfile);
 
 uint32_t StackPush(Stack *stk, FILE *logfile, Elem_t value);
 
-unsigned long djb2hash_safety(Stack* stk);
-
+static inline unsigned long djb2hash_safety(Stack* stk);

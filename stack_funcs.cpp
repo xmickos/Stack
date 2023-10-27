@@ -21,7 +21,7 @@ bool IsEqual(Elem_t a, Elem_t b){
     return fabs(a - b) < EPS;
 }
 
-unsigned long djb2hash_safety(Stack* stk){
+static inline unsigned long djb2hash_safety(Stack* stk){
 #ifndef NOHASH
     unsigned long hash = 5381;
     unsigned long c = 0;
