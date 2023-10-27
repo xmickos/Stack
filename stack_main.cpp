@@ -6,20 +6,15 @@ int main(){
     size_t capacity = 8;
     FILE* logfile = fopen("logfile.txt", "w");
 
-    //User input for capacity ?
-
-    printf("%lu, %lu, %lu, %lu, %lu, %lu, %lu\n", sizeof(uint8_t), sizeof(char*), sizeof(Elem_t), sizeof(Elem_t*),
-            sizeof(Canary_t), sizeof(Canary_t*), sizeof(void*));
-
     StackCtor(&stk, capacity, logfile);
 
     for(int i = 0; i < 64; i++){
         StackPush(&stk, logfile, i);
     }
 
-    StackPush(&stk, logfile, POISON);
-
-    // printf("Hash: %lu\n", stk.hash);
+    for(int i = 0; i < 64; i++){
+        StackPop(&stk, logfile);
+    }
 
     StackDtor(&stk, logfile);
 
