@@ -1,0 +1,306 @@
+[DUMP][file: stack_funcs.cpp, func: StackDump, line: 170]
+stk->size: 0,
+stk->capacity: 8.
+	stk->data[18446744073709551615] = FIRST_CANARY
+	stk->data[0] = POISON
+	stk->data[1] = POISON
+	stk->data[2] = POISON
+	stk->data[3] = POISON
+	stk->data[4] = POISON
+	stk->data[5] = POISON
+	stk->data[6] = POISON
+	stk->data[7] = POISON
+	stk->data[8] = SECOND_CANARY
+[StackPush, line: 242] Pushed 0.000000 successfully!
+[StackPush, line: 242] Pushed 1.000000 successfully!
+[StackPush, line: 242] Pushed 2.000000 successfully!
+[StackPush, line: 242] Pushed 3.000000 successfully!
+[StackPush, line: 242] Pushed 4.000000 successfully!
+[StackPush, line: 242] Pushed 5.000000 successfully!
+[StackPush, line: 242] Pushed 6.000000 successfully!
+[StackResize, line: 69] Resizing from 8 to 16 capacity
+[StackPush, line: 236]Resized successfully!
+
+[StackPush, line: 242] Pushed 7.000000 successfully!
+[StackPush, line: 242] Pushed 8.000000 successfully!
+[StackPush, line: 242] Pushed 9.000000 successfully!
+[StackPush, line: 242] Pushed 10.000000 successfully!
+[StackPush, line: 242] Pushed 11.000000 successfully!
+[StackPush, line: 242] Pushed 12.000000 successfully!
+[StackResize, line: 69] Resizing from 16 to 32 capacity
+[StackPush, line: 236]Resized successfully!
+
+[StackPush, line: 242] Pushed 13.000000 successfully!
+[StackPush, line: 242] Pushed 14.000000 successfully!
+[StackPush, line: 242] Pushed 15.000000 successfully!
+[StackPush, line: 242] Pushed 16.000000 successfully!
+[StackPush, line: 242] Pushed 17.000000 successfully!
+[StackPush, line: 242] Pushed 18.000000 successfully!
+[StackPush, line: 242] Pushed 19.000000 successfully!
+[StackPush, line: 242] Pushed 20.000000 successfully!
+[StackPush, line: 242] Pushed 21.000000 successfully!
+[StackPush, line: 242] Pushed 22.000000 successfully!
+[StackPush, line: 242] Pushed 23.000000 successfully!
+[StackPush, line: 242] Pushed 24.000000 successfully!
+[StackPush, line: 242] Pushed 25.000000 successfully!
+[StackResize, line: 69] Resizing from 32 to 64 capacity
+[StackPush, line: 236]Resized successfully!
+
+[StackPush, line: 242] Pushed 26.000000 successfully!
+[StackPush, line: 242] Pushed 27.000000 successfully!
+[StackPush, line: 242] Pushed 28.000000 successfully!
+[StackPush, line: 242] Pushed 29.000000 successfully!
+[StackPush, line: 242] Pushed 30.000000 successfully!
+[StackPush, line: 242] Pushed 31.000000 successfully!
+[StackPush, line: 242] Pushed 32.000000 successfully!
+[StackPush, line: 242] Pushed 33.000000 successfully!
+[StackPush, line: 242] Pushed 34.000000 successfully!
+[StackPush, line: 242] Pushed 35.000000 successfully!
+[StackPush, line: 242] Pushed 36.000000 successfully!
+[StackPush, line: 242] Pushed 37.000000 successfully!
+[StackPush, line: 242] Pushed 38.000000 successfully!
+[StackPush, line: 242] Pushed 39.000000 successfully!
+[StackPush, line: 242] Pushed 40.000000 successfully!
+[StackPush, line: 242] Pushed 41.000000 successfully!
+[StackPush, line: 242] Pushed 42.000000 successfully!
+[StackPush, line: 242] Pushed 43.000000 successfully!
+[StackPush, line: 242] Pushed 44.000000 successfully!
+[StackPush, line: 242] Pushed 45.000000 successfully!
+[StackPush, line: 242] Pushed 46.000000 successfully!
+[StackPush, line: 242] Pushed 47.000000 successfully!
+[StackPush, line: 242] Pushed 48.000000 successfully!
+[StackPush, line: 242] Pushed 49.000000 successfully!
+[StackPush, line: 242] Pushed 50.000000 successfully!
+[StackPush, line: 242] Pushed 51.000000 successfully!
+[StackResize, line: 69] Resizing from 64 to 128 capacity
+[StackPush, line: 236]Resized successfully!
+
+[StackPush, line: 242] Pushed 52.000000 successfully!
+[StackPush, line: 242] Pushed 53.000000 successfully!
+[StackPush, line: 242] Pushed 54.000000 successfully!
+[StackPush, line: 242] Pushed 55.000000 successfully!
+[StackPush, line: 242] Pushed 56.000000 successfully!
+[StackPush, line: 242] Pushed 57.000000 successfully!
+[StackPush, line: 242] Pushed 58.000000 successfully!
+[StackPush, line: 242] Pushed 59.000000 successfully!
+[StackPush, line: 242] Pushed 60.000000 successfully!
+[StackPush, line: 242] Pushed 61.000000 successfully!
+[StackPush, line: 242] Pushed 62.000000 successfully!
+[StackPush, line: 242] Pushed 63.000000 successfully!
+Popping 63.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 62.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 61.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 60.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 59.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 58.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 57.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 56.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 55.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 54.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 53.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 52.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 51.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 50.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 49.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 48.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 47.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 46.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 45.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 44.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 43.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 42.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 41.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 40.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 39.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 38.000000
+[StackPop, line: 155]Popped succesfully!
+
+[StackResize, line: 69] Resizing from 128 to 64 capacity
+Popping 37.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 36.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 35.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 34.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 33.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 32.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 31.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 30.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 29.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 28.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 27.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 26.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 25.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 24.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 23.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 22.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 21.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 20.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 19.000000
+[StackPop, line: 155]Popped succesfully!
+
+[StackResize, line: 69] Resizing from 64 to 32 capacity
+Popping 18.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 17.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 16.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 15.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 14.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 13.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 12.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 11.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 10.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 9.000000
+[StackPop, line: 155]Popped succesfully!
+
+[StackResize, line: 69] Resizing from 32 to 16 capacity
+Popping 8.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 7.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 6.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 5.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 4.000000
+[StackPop, line: 155]Popped succesfully!
+
+[StackResize, line: 69] Resizing from 16 to 16 capacity
+Popping 3.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 2.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 1.000000
+[StackPop, line: 155]Popped succesfully!
+
+Popping 0.000000
+[StackPop, line: 155]Popped succesfully!
+
+[DUMP][file: stack_funcs.cpp, func: StackDump, line: 170]
+stk->size: 0,
+stk->capacity: 16.
+	stk->data[18446744073709551615] = FIRST_CANARY
+	stk->data[0] = POISON
+	stk->data[1] = POISON
+	stk->data[2] = POISON
+	stk->data[3] = POISON
+	stk->data[4] = POISON
+	stk->data[5] = POISON
+	stk->data[6] = POISON
+	stk->data[7] = POISON
+	stk->data[8] = POISON
+	stk->data[9] = POISON
+	stk->data[10] = POISON
+	stk->data[11] = POISON
+	stk->data[12] = POISON
+	stk->data[13] = POISON
+	stk->data[14] = POISON
+	stk->data[15] = POISON
+	stk->data[16] = SECOND_CANARY
