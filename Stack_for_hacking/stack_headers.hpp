@@ -5,6 +5,7 @@
 
 #define POISON 0xC0DEDEAD
 #define BASIC_POISON 0xC67178F2
+#define MAX_STACK_SIZE 8092
 #define EPS 1e-3
 #define DEBUG
 #define SILENT_DEBUG
