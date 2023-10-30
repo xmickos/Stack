@@ -195,6 +195,11 @@ uint32_t StackCtor(Stack *stk, size_t capacity, FILE* logfile){
     DEBUG_ECHO(stdout, "");
     VERIFICATION_CRITICAL(logfile == nullptr, "logfile is nullptr!\n", LOGFILE_NULL, logfile);
 
+    if(capacity > MAX_STACK_SIZE){
+        printf("Provided capacity is too large!\nExiting...\n");
+        return ZERO_CAP;
+    }
+
     stk->capacity = capacity;
     stk->size = 0;
 
